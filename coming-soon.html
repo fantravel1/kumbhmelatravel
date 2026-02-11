@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Coming Soon — KumbhMelaTravel</title>
+    <meta name="description" content="This page is coming soon. KumbhMelaTravel is building the world's definitive Kumbh Mela planning, safety, and booking platform.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙏</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-saffron: #E8730C;
+            --color-saffron-dark: #C45D08;
+            --color-sacred-blue: #1B3A5C;
+            --color-sacred-blue-dark: #0F2640;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-sacred-blue-dark);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            padding: 2rem;
+        }
+
+        /* Animated background */
+        .bg-pattern {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.04;
+            background: var(--color-saffron);
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -150px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            top: 40%;
+            left: 50%;
+            animation: float3 18s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-40px, 30px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -40px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, -20px); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 600px;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: gentlePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-saffron);
+            background: rgba(232, 115, 12, 0.12);
+            border: 1px solid rgba(232, 115, 12, 0.25);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: var(--color-saffron);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        @media (min-width: 480px) {
+            .actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 32px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            line-height: 1.4;
+        }
+
+        .btn-primary {
+            background: var(--color-saffron);
+            color: #fff;
+            border-color: var(--color-saffron);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-saffron-dark);
+            border-color: var(--color-saffron-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(232, 115, 12, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+            text-align: center;
+            width: 90%;
+        }
+
+        .footer-note a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-note a:hover {
+            color: var(--color-saffron);
+        }
+
+        /* Water ripple decoration */
+        .ripple-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.06;
+        }
+
+        .ripple {
+            position: absolute;
+            bottom: -50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            transform: translateX(-50%);
+            border-radius: 45%;
+            background: var(--color-saffron);
+            animation: ripple 8s linear infinite;
+        }
+
+        .ripple:nth-child(2) {
+            animation-delay: -4s;
+            opacity: 0.7;
+        }
+
+        @keyframes ripple {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-circle, .icon, .ripple {
+                animation: none !important;
+            }
+
+            .content {
+                animation: none !important;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <div class="ripple-container">
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+    </div>
+
+    <div class="content">
+        <span class="icon" aria-hidden="true">🙏</span>
+        <div class="badge">Coming Soon</div>
+        <h1>This page is being <span>prepared with care</span></h1>
+        <p class="subtitle">
+            We're building the world's most trusted Kumbh Mela planning platform.
+            Every page is crafted with respect, accuracy, and real operational detail.
+            This one isn't ready yet — but it will be.
+        </p>
+        <div class="actions">
+            <a href="/" class="btn btn-primary">Back to Homepage</a>
+            <a href="/#plan" class="btn btn-outline">Start Planning</a>
+        </div>
+    </div>
+
+    <p class="footer-note">
+        <a href="/">KumbhMelaTravel.com</a> — Pilgrimage planning, done properly.
+    </p>
+</body>
+</html>
